@@ -5,6 +5,7 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -18,6 +19,15 @@ public class UserProfile {
     private UUID profileId = UUID.randomUUID();
     private String userName;
     private String profileImageLink; // s3 link
+
+    public UserProfile(String userName, String profileImageLink) {
+        this.userName = userName;
+        this.profileImageLink = profileImageLink;
+    }
+
+    public Optional<String> getProfileImageLink() {
+        return Optional.ofNullable(profileImageLink);
+    }
 
     @Override
     public boolean equals(Object o) {
