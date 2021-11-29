@@ -2,6 +2,7 @@ package com.aszoka.awsimageupload.profile;
 
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Objects;
@@ -17,6 +18,7 @@ public class UserProfile {
 
     @Id
     private UUID profileId = UUID.randomUUID();
+    @Column(unique = true)
     private String userName;
     private String profileImageLink; // s3 link
 
