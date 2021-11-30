@@ -17,12 +17,16 @@ public class AwsImageUploadApplication {
 		SpringApplication.run(AwsImageUploadApplication.class, args);
 	}
 
-	@Bean
+
+/*	@Bean
 	CommandLineRunner run(UserProfileRepo userProfileRepo) {
 		return args -> {
 			userProfileRepo.save(
 					new UserProfile(UUID.randomUUID(), "aszoka", null)
 			);
+			userProfileRepo.save(
+					new UserProfile(UUID.randomUUID(), "picike", null)
+			);
 		};
-	}
+	}*/
 }
