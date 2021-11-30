@@ -1,6 +1,7 @@
 package com.aszoka.awsimageupload.profile;
 
 import lombok.*;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +18,7 @@ import java.util.UUID;
 public class UserProfile {
 
     @Id
+    @Type(type="uuid-char")
     private UUID profileId = UUID.randomUUID();
     @Column(unique = true)
     private String userName;
